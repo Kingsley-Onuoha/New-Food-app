@@ -72,19 +72,6 @@
   column-gap: 0.5rem;
   cursor: pointer;
 }
-.offers:hover {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  column-gap: 0.5rem;
-  cursor: pointer;
-  color: rgb(255, 141, 2);
-
-}
-.offers i {
-  font-size: 1.4rem;
-}
 .help {
   display: flex;
   flex-direction: row;
@@ -153,15 +140,80 @@
   flex-direction: row;
   justify-content: center;
   align-content: center;
-  position: absolute;
   right: 5.4rem;
   top: 1.8rem;
 }
+.right button{
+  width: 5rem;
+  height: 2rem;
+  border: none;
+  outline: none;
+  border-radius: 0.9rem;
+  color: white;
+  background-color: rgb(24, 21, 21);
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+.right button:hover{
+  width: 5rem;
+  height: 2rem;
+  border: none;
+  outline: none;
+  border-radius: 0.9rem;
+  color: white;
+  background-color: rgb(255, 141, 2);
+  color: black;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
 .body{
-  margin: 5rem 12rem;
+  margin: 2rem 12rem;
   display:flex;
   flex-direction: column;
   row-gap: 1.7rem;
+}
+.input{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.input input{
+  width: 20rem;
+  height: 2.8rem;
+  border-bottom-left-radius: 1rem;
+  border-top-left-radius: 1rem;
+  border: 3px solid rgb(196, 113, 11);
+  outline: none;
+  font-weight: 500;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: larger ;
+  padding: 1rem;
+}
+.input button{
+  width: 7rem;
+  height: 2.8rem;
+  border-bottom-right-radius: 1rem;
+  border-top-right-radius: 1rem;
+  background-color:rgb(196, 113, 11);
+  font-size: x-large;
+  font-weight: 500;
+  color: white;
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+.input button:hover{
+  width: 7rem;
+  height: 2.8rem;
+  border-bottom-right-radius: 1rem;
+  border-top-right-radius: 1rem;
+  background-color: rgb(24, 21, 21);
+  color: white;
+  font-size: x-large;
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+  border: none;
 }
 .filters{
   display: flex;
@@ -261,3 +313,4 @@ overflow: hidden;
 .footer .h3{
   margin-right: 14rem;
 }
+

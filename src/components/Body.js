@@ -3,11 +3,15 @@ import ReactDOM from "react-dom/client"
 import RestaurantCard from "./RestaurantCard"
 import { useState, useEffect } from "react"
 import { resList } from "../utils/config"
+import Shimmer from "./Shimmer"
+
 
 
 
 const Body = () =>{
    const [restaurantAPI, setRestaurantAPI] = useState([]) 
+
+   const [searchText, setSearchText] = useState("")
 
    useEffect(() =>{
     fetchData()
@@ -18,12 +22,21 @@ const Body = () =>{
 
     const json = await data.json()
 
-    console.log(json)
-
     setRestaurantAPI(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
    }
-    return(
+    return restaurantAPI.length === 0? <Shimmer />: (
         <div className="body">
+                <div className="input">
+                  <input type="text" value={searchText} onChange={(e)=>{
+                    setSearchText(e.target.value)
+                  }} />
+                  <button onClick={()=>{
+                    let searchedRestaurant = restaurantAPI.filter((rest) => rest.info.name.toLowerCase().includes(searchText.toLowerCase()) );
+                      setRestaurantAPI(searchedRestaurant)
+                      console.log(searchedRestaurant)
+                  }}>
+                    Search</button>
+                </div>
                 <h1>Restaurants with online food delivery in Lagos</h1>
                 <div className="filters">
                   <button className="filter-btn" onClick={()=>{

@@ -1,9 +1,11 @@
-import React from "react"
+import React, { useState } from "react"
 import ReactDOM from "react-dom/client"
 import { LOGO_URL } from "../utils/config"
 
 
 const Header = ()=>{
+  const [butName, setButname] = useState("Login")
+
   return(
     <div className="header">
       <div className="left">
@@ -18,10 +20,6 @@ const Header = ()=>{
           <i className="fa fa-home" aria-hidden="true"></i>
           <h2>Home</h2>
         </div>
-        <div className="offers">
-          <i className="fa fa-cog" aria-hidden="true"></i>
-          <h2>Contact</h2>
-        </div>
         <div className="help">
           <i className="fa fa-question-circle" aria-hidden="true"></i>
           <h2>About</h2>
@@ -31,14 +29,19 @@ const Header = ()=>{
           <h2>Sign In</h2>
         </div>
         <div className="cart">
+          <i className="fa fa-shopping-cart" aria-hidden="true"></i>
+          <h2>Cart</h2>
           <div className="value">
             <h3>0</h3>
           </div>
-          <i className="fa fa-shopping-cart" aria-hidden="true"></i>
-          <h2>Cart</h2>
         </div>
+        <button onClick={()=>{
+          butName === "Login"? 
+          setButname("Logout"): 
+          setButname("Login")
+        }}
+        >{butName}</button>
       </div>
-
     </div>
   )
 }
