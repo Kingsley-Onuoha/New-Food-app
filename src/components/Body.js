@@ -11,6 +11,8 @@ import Shimmer from "./Shimmer"
 const Body = () =>{
    const [restaurantAPI, setRestaurantAPI] = useState([]) 
 
+   const [filteredRestaurantAPI, setFilteredRestaurantAPI] = useState([])
+
    const [searchText, setSearchText] = useState("")
 
    useEffect(() =>{
@@ -23,6 +25,7 @@ const Body = () =>{
     const json = await data.json()
 
     setRestaurantAPI(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+    setFilteredRestaurantAPI(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
    }
     return restaurantAPI.length === 0? <Shimmer />: (
         <div className="body">
@@ -32,27 +35,26 @@ const Body = () =>{
                   }} />
                   <button onClick={()=>{
                     let searchedRestaurant = restaurantAPI.filter((rest) => rest.info.name.toLowerCase().includes(searchText.toLowerCase()) );
-                      setRestaurantAPI(searchedRestaurant)
-                      console.log(searchedRestaurant)
+                      setFilteredRestaurantAPI(searchedRestaurant)
                   }}>
                     Search</button>
                 </div>
                 <h1>Restaurants with online food delivery in Lagos</h1>
                 <div className="filters">
                   <button className="filter-btn" onClick={()=>{
-                   let filteredRestaurants = restaurantAPI.filter((res)=>res.info.avgRating > 4)
-                   setRestaurantAPI(filteredRestaurants)
+                   let filteredRestaurants = filteredRestaurantAPI.filter((res)=>res.info.avgRating > 4)
+                   setFilteredRestaurantAPI(filteredRestaurants)
                     }}>
                     Top Rated Restaurants
                   </button>
                   <button className="filter-btn" onClick={()=>{
-                   let filteredRestaurants = restaurantAPI.filter((res)=>res.info.avgRating < 4)
-                   setRestaurantAPI(filteredRestaurants)
+                   let filteredRestaurants = filteredRestaurantAPI.filter((res)=>res.info.avgRating < 4)
+                   setFilteredRestaurantAPI(filteredRestaurants)
                     }}>
                     Lowest Rated Restaurants
                   </button>
                 </div>
-                <div className="body-restaurant">{restaurantAPI.map((restaurant)=>(<RestaurantCard key={restaurant.info.id} resData={restaurant}/>))}</div>
+                <div className="body-restaurant">{filteredRestaurantAPI.map((restaurant)=>(<RestaurantCard key={restaurant.info.id} resData={restaurant}/>))}</div>
                 
         </div>
     )
