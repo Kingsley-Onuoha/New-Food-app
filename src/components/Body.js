@@ -27,7 +27,7 @@ const Body = () =>{
     setRestaurantAPI(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
     setFilteredRestaurantAPI(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
    }
-    return restaurantAPI.length === 0? <Shimmer />: (
+    return restaurantAPI?.length === 0? <Shimmer />: (
         <div className="body">
                 <div className="input">
                   <input type="text" value={searchText} onChange={(e)=>{
@@ -54,7 +54,7 @@ const Body = () =>{
                     Lowest Rated Restaurants
                   </button>
                 </div>
-                <div className="body-restaurant">{filteredRestaurantAPI.map((restaurant)=>(<RestaurantCard key={restaurant.info.id} resData={restaurant}/>))}</div>
+                <div className="body-restaurant">{filteredRestaurantAPI?.map((restaurant)=>(<RestaurantCard key={restaurant.info.id} resData={restaurant}/>))}</div>
                 
         </div>
     )

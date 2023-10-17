@@ -313,4 +313,50 @@ overflow: hidden;
 .footer .h3{
   margin-right: 14rem;
 }
-
+.about{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem 5rem;
+  row-gap: 2rem;
+  background-color: rgb(64, 102, 158);
+  color: white;
+}
+.about h1{
+  margin: 1rem auto;
+}
+.about-info{
+  display: flex;
+  flex-direction: row;
+  padding:2rem;
+  background-color: white;
+  color: black;
+}
+.about img{
+  width: 40rem;
+  height: auto;
+  object-fit:contain;
+  border-radius: 100%;
+}
+.main .passion{
+  margin: 4rem 1rem;
+}
+.about .brief-info{
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ border-bottom: 1px solid grey;
+ border-top: 1px solid grey;
+ row-gap: 1.2rem;
+ margin: 5rem auto;
+ padding: 2rem;
+}
+.error{
+  margin: 2rem 5rem;
+}
+.error img{
+  width: 20rem;
+  height: 18rem;
+}
