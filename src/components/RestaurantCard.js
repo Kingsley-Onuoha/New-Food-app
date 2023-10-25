@@ -13,7 +13,7 @@ const RestaurantCard = (props) =>{
                 <img src={CLOUDINARYIMAGEID_URL + cloudinaryImageId} alt="logo" />
                 <div className="details"> 
                     <h2>{name}</h2>
-                    <div className="rating">
+                    <div className="rating1">
                         <div className="star"><i className="fa fa-star" aria-hidden="true"></i></div>
                         <h2>{avgRating}</h2>
                     </div>
