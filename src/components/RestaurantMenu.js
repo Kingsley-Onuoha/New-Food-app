@@ -29,7 +29,6 @@ const RestaurantMenu = () =>{
         setResMenu(json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards)
     }
 
-    
     return (resInfo === null)? <Shimmer />:(
         <div className="menu">
             <div className="info-rating">
