@@ -22,7 +22,6 @@ const RestaurantMenu = () =>{
         const data = await fetch(MENU_API+ resId +"&catalog_qa=undefined&submitAction=ENTER")
         
         const json = await data.json()
-        console.log(json)
 
         setResInfo(json?.data?.cards[0]?.card?.card?.info)
 
