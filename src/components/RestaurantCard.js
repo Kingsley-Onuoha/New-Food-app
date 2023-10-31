@@ -25,4 +25,28 @@ const RestaurantCard = (props) =>{
         </div>
     )
 }
-export default RestaurantCard
+
+export const withOpenedLabel = (RestaurantCard) =>{
+    return (props)=>{
+        return(
+            <div className="open-restaurant-card">
+                <label>Open</label>
+                <RestaurantCard {...props}/>
+            </div>
+        )
+    }
+}
+
+export const withClosedLabel = (RestaurantCard) =>{
+    return (props)=>{
+        return(
+            <div>
+                <label>Closed</label>
+                <RestaurantCard {...props}/>
+            </div>
+        )
+    }
+}
+export default RestaurantCard 
+
+

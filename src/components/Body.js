@@ -1,6 +1,6 @@
 import React from "react"
 import ReactDOM from "react-dom/client"
-import RestaurantCard from "./RestaurantCard"
+import RestaurantCard, { withClosedLabel, withOpenedLabel } from "./RestaurantCard"
 import { useState, useEffect } from "react"
 import { resList } from "../utils/config"
 import Shimmer from "./Shimmer"
@@ -16,6 +16,11 @@ const Body = () =>{
 
    const [searchText, setSearchText] = useState("")
 
+   const RestaurantCardWithOpenLabel = withOpenedLabel(RestaurantCard)
+
+   const RestaurantCardWithClosedLabel = withClosedLabel(RestaurantCard)
+
+
    useEffect(() =>{
     fetchData()
    },[])
@@ -28,6 +33,7 @@ const Body = () =>{
     setRestaurantAPI(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
     setFilteredRestaurantAPI(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
    }
+   console.log(restaurantAPI)
     return restaurantAPI.length === 0? <Shimmer />: (
         <div className="body">
                 <div className="input">
@@ -56,7 +62,9 @@ const Body = () =>{
                   </button>
                 </div>
                 <div className="body-restaurant">{filteredRestaurantAPI.map((restaurant)=>(
-                <Link className="link" key={restaurant.info.id} to={"/restaurants/"+ restaurant.info.id}><RestaurantCard resData={restaurant}/></Link>
+                <Link className="link" key={restaurant.info.id} to={"/restaurants/"+ restaurant.info.id}>
+                  {restaurant.info.availability.opened?(< RestaurantCardWithOpenLabel resData={restaurant}/>):(<RestaurantCardWithClosedLabel resData={restaurant}/>)}
+                </Link>
                 ))}</div>
                 
         </div>

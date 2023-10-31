@@ -505,3 +505,28 @@ row-gap: 2rem;
   border: none;
   font-weight: 500;
 }
+label{
+  background-color: rgb(32, 31, 31);
+  color: white;
+  position: absolute;
+  margin: 0.2rem;
+  padding:0.3rem 0.6rem;
+  border-top-left-radius:0.5rem;
+  font-size: larger;
+}
+.open-restaurant-card{
+  transform: scale(0.92);
+}
+.accordion-header{
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.6rem;
+  font-weight:bolder;
+  text-decoration: solid;
+  color: rgb(46, 44, 44);
+  box-shadow: 5px 6px 8px rgb(206, 203, 203);
+  padding: 1rem;
+}
+.restaurant-category{
+  margin: 1.5rem 1.2rem
+}
