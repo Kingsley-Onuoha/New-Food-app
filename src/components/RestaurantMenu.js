@@ -14,7 +14,10 @@ const RestaurantMenu = () =>{
 
     const [newMenu, setNewMenu] = useState([])
 
+    const [showIndex, setShowIndex] = useState(0)
+
     const {resId} = useParams()
+
 
     useEffect(()=>{
         fetchMenu()
@@ -34,7 +37,6 @@ const RestaurantMenu = () =>{
     const categories = newMenu.filter(c=> c?.card?.card?.["@type"]== 
     "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory")
 
-    console.log(categories)
 
     return (resInfo === null)? <Shimmer />:(
         <div className="menu">
@@ -52,14 +54,14 @@ const RestaurantMenu = () =>{
                 </div> 
             </div>
             <div className="delivery">
-                <span>
+                <span className="message">
                     <i className="fa fa-bicycle" aria-hidden="true"></i><h2>{resInfo?.feeDetails?.message}</h2>
                 </span>
             </div>
             <div>
-                {categories.map(category => <RestaurantCategory data = {category?.card?.card}/>)}
+                {categories.map((category, index) => <RestaurantCategory key={category?.card?.card.title} data= {category?.card?.card} showItems={index ==showIndex? true: false} setShowIndex={()=>{setShowIndex(index)}}/>)}
             </div>
         </div>
-    )
+    ) 
 }
 export default RestaurantMenu

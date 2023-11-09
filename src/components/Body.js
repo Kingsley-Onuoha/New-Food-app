@@ -33,7 +33,6 @@ const Body = () =>{
     setRestaurantAPI(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
     setFilteredRestaurantAPI(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
    }
-   console.log(restaurantAPI)
     return restaurantAPI.length === 0? <Shimmer />: (
         <div className="body">
                 <div className="input">

@@ -1,11 +1,18 @@
-import React, { useState } from "react"
+import React, { useContext, useState } from "react"
 import ReactDOM from "react-dom/client"
 import { LOGO_URL } from "../utils/config"
 import { Link } from "react-router-dom"
+import UserContext from "../utils/UserContext"
+import { useSelector } from "react-redux"
 
 
 const Header = ()=>{
   const [butName, setButname] = useState("Login")
+
+  const data = useContext(UserContext)
+
+  const cartItems = useSelector((store) => store.cart.items)
+  console.log(cartItems)
 
   return(
     <div className="header">
@@ -44,7 +51,7 @@ const Header = ()=>{
             <i className="fa fa-shopping-cart" aria-hidden="true"></i>
             <h2>Cart</h2>
             <div className="value">
-              <h3>0</h3>
+              <h3>{cartItems.length}</h3>
             </div>
         </div>
         </Link>
@@ -55,6 +62,7 @@ const Header = ()=>{
           setButname("Login")
         }}
         >{butName}</button>
+        <h2>{data.loggedInUser}</h2>
       </div>
     </div>
   )
