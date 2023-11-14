@@ -10,7 +10,7 @@ const About = () =>{
                     <h2 className="passion">I'm passionate about technology and thoroughly enjoy creating websites 👻.</h2>
                     <div className="brief-info">
                         <h2>I'd like to share a bit more about myself</h2>
-                        <h2>🌟 I have a keen interest in web design and development.</h2>
+                        <h2>🌟 I have a keen interest in graphics design and web development.</h2>
                         <h2>📚 Currently, I'm actively learning React.js.</h2>
                         <h2>⚡ I'm open to collaborating on web development projects.</h2>
                         <h2>🌱 I'm eager to explore Backend development further.</h2>

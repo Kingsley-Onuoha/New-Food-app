@@ -756,6 +756,7 @@ column-gap: 0.7rem;
   font-weight: 600;
   border: 1px solid grey;
   outline: none;
+  cursor: pointer;
 }
 .sub-total{
   display: flex;

@@ -1,11 +1,29 @@
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { CLOUDINARYIMAGEID_URL } from "../utils/config"
 import { Link } from "react-router-dom"
+import { addItem, clearCart, decreaseCartItem, removeItem } from "../utils/cartSlice"
 
 const ActiveCart = () =>{
     const cart = useSelector((state)=> state.cart)
 
-    console.log(cart.items)
+    const dispatch = useDispatch()
+
+    const handleRemoveItem = (items) =>{
+        dispatch(removeItem(items))
+    }
+
+    const handleDecreaseCartQuantity = (items) =>{
+        dispatch(decreaseCartItem(items))
+    }
+
+    const handleIncreaseCartQuantity = (items) =>{
+        dispatch(addItem(items))
+    }
+
+    const handleClearCart = () =>{
+        dispatch(clearCart())
+    }
+
     return(
         <div className="cart-container">
             <div className="cart-title">
@@ -20,7 +38,7 @@ const ActiveCart = () =>{
                                <div className ="details">
                                     <h3>{items?.card?.info?.name}</h3>
                                     <p>{items?.card?.info?.description}</p>
-                                    <button className="remove">Remove</button>
+                                    <button className="remove" onClick={()=> handleRemoveItem(items)}>Remove</button>
                                 </div>
                             </div>
                             <div className="cart-product-price">
@@ -28,9 +46,9 @@ const ActiveCart = () =>{
                                 <div className="increment">
                                     <h4>Quantity:  </h4>
                                     <div className="increment-btn">
-                                        <button> - </button>
+                                        <button onClick={() =>handleDecreaseCartQuantity(items)}> - </button>
                                         <h3>{items?.cartQuantity}</h3>
-                                        <button> + </button>
+                                        <button onClick={() => handleIncreaseCartQuantity(items)}> + </button>
                                     </div>
                                 </div>
                                 <h3>Total Price:  ₦ {Math.ceil(items?.card?.info?.price/100)*items?.cartQuantity}</h3>
@@ -40,7 +58,7 @@ const ActiveCart = () =>{
                 ))}
             <div className="cart-summary">
                 <div className="btn">
-                    <button className="clear-cart">Clear Cart</button>
+                    <button className="clear-cart" onClick={() => handleClearCart()}>Clear Cart</button>
                 </div>
                 <div className="cart-checkout">
                     <div className="sub-total">
