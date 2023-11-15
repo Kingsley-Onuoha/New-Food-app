@@ -1,7 +1,8 @@
 import { useDispatch, useSelector } from "react-redux"
 import { CLOUDINARYIMAGEID_URL } from "../utils/config"
 import { Link } from "react-router-dom"
-import { addItem, clearCart, decreaseCartItem, removeItem } from "../utils/cartSlice"
+import { addItem, clearCart, decreaseCartItem, getTotals, removeItem } from "../utils/cartSlice"
+import { useEffect } from "react"
 
 const ActiveCart = () =>{
     const cart = useSelector((state)=> state.cart)
@@ -23,6 +24,10 @@ const ActiveCart = () =>{
     const handleClearCart = () =>{
         dispatch(clearCart())
     }
+
+    useEffect(() =>{
+        dispatch(getTotals())
+    }, [cart, dispatch])
 
     return(
         <div className="cart-container">
@@ -63,7 +68,7 @@ const ActiveCart = () =>{
                 <div className="cart-checkout">
                     <div className="sub-total">
                         <h3>Subtotal</h3> 
-                        <h3 className="total-amount">{cart?.totalAmount}</h3> 
+                        <h3 className ="total-amount">₦ {cart?.totalAmount}</h3>
                     </div>
                     <h4 className="free-delivery">Delivery is free Nationwide</h4>
                     <button className="checkout">Check out</button>

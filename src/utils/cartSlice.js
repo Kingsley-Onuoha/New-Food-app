@@ -58,6 +58,25 @@ reducers:{
             }
             localStorage.setItem("items", JSON.stringify(state.items))
     },
+    getTotals:(state, action)=>{
+        let {total, quantity} = state.items.reduce(
+           (cartTotal, item) =>{
+
+            const itemTotal = Math.ceil(item?.card?.info?.price/100)* item?.cartQuantity
+
+            cartTotal.total += itemTotal
+
+            return cartTotal
+           },
+           {
+            total: 0,
+            quantity:0
+           }
+        )
+
+        state.totalQuantity = quantity
+        state.totalAmount = total
+    },
     clearCart: (state)=>{
 
         state.items.length = 0
@@ -71,6 +90,6 @@ reducers:{
 
 }
 })
-export const {addItem, removeItem, decreaseCartItem, clearCart} = cartSlice.actions
+export const {addItem, removeItem, decreaseCartItem, clearCart, getTotals} = cartSlice.actions
 
 export default cartSlice.reducer

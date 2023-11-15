@@ -1,5 +1,6 @@
 import { configureStore} from "@reduxjs/toolkit"
-import cartReducer from './cartSlice'
+import cartReducer, { getTotals } from './cartSlice'
+
 
 const appStore = configureStore({
     reducer:{
@@ -7,5 +8,6 @@ const appStore = configureStore({
     },
 
 })
+
 export default appStore
 

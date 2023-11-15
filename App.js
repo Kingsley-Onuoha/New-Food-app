@@ -9,10 +9,12 @@ import Error from "./src/components/Error"
 import SignIn from "./src/components/SignIn"
 import RestaurantMenu from "./src/components/RestaurantMenu"
 import UserContext from "./src/utils/UserContext"
-import { Provider } from "react-redux"
+import { Provider, useDispatch } from "react-redux"
 import appStore from "./src/utils/appStore"
 import { ToastContainer } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css';
+import { useDispatch } from "react-redux"
+import { getTotals } from "./src/utils/cartSlice"
 
 
 const Cart = lazy(()=> import("./src/components/Cart"))
@@ -21,7 +23,8 @@ const App = ()=>{
 
   
   const [userInfo, setUserInfo] = useState()
-  
+
+
 
   useEffect(()=>{
   
@@ -30,6 +33,8 @@ const App = ()=>{
     }
     setUserInfo(data.name)
   }, [])
+
+  
 
   return(
     <Provider store={appStore}>
