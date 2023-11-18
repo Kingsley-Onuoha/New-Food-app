@@ -9,18 +9,20 @@ import { useSelector } from "react-redux"
 const Header = ()=>{
   const [butName, setButname] = useState("Login")
 
+  const [clicked, setClicked] = useState(false)
+
   const data = useContext(UserContext)
 
   const cartItems = useSelector((store) => store.cart.items)
+
+  const handleClick =() =>{
+    setClicked(!clicked)
+  }
 
   return(
     <div className="header">
       <div className="left">
         <Link className="link" to ="/"><img src={LOGO_URL} alt="logo" /></Link>
-        <div className="location">
-          <h2>Lagos</h2>
-          <i class="fa fa-map-marker" aria-hidden="true"></i>
-        </div>
       </div>
 
       <div className="right">
@@ -41,7 +43,7 @@ const Header = ()=>{
         <Link className="link" to="/signin">
           <div className="user">
             <i className="fa fa-user-circle" aria-hidden="true"></i>
-            <h2>Sign In</h2>
+            <h2>SignIn</h2>
           </div>
         </Link>
 
@@ -61,7 +63,12 @@ const Header = ()=>{
           setButname("Login")
         }}
         >{butName}</button>
-        <h2>{data.loggedInUser}</h2>
+
+        <h2>Hi {data.loggedInUser}</h2>
+      </div>
+
+      <div className="mobile">
+      <i className={clicked? "fa fa-times" : "fa fa-bars"} onClick={handleClick} aria-hidden="true"></i>
       </div>
     </div>
   )

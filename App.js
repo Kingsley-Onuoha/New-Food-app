@@ -29,7 +29,7 @@ const App = ()=>{
   useEffect(()=>{
   
     const data = {
-      name : "Kingsley"
+      name : "User"
     }
     setUserInfo(data.name)
   }, [])

@@ -12,12 +12,12 @@ const RestaurantCard = (props) =>{
             <div className="restaurant-card">
                 <img src={CLOUDINARYIMAGEID_URL + cloudinaryImageId} alt="logo" />
                 <div className="details"> 
-                    <h2>{name}</h2>
+                    <h2 className="details-name">{name}</h2>
                     <div className="rating1">
                         <div className="star"><i className="fa fa-star" aria-hidden="true"></i></div>
-                        <h2>{avgRating}</h2>
+                        <h2 className="rating2">{avgRating}</h2>
                     </div>
-                    <h3>
+                    <h3 className="cuisines">
                         {cuisines?.join(" , ")}
                     </h3>
                 </div>

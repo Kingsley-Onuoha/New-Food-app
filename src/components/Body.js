@@ -45,7 +45,10 @@ const Body = () =>{
                   }}>
                     Search</button>
                 </div>
-                <h1>Restaurants with online food delivery in Lagos</h1>
+                <div className="filter-title">
+                  <h1>Restaurants with online food delivery in Lagos</h1>
+                </div>
+                
                 <div className="filters">
                   <button className="filter-btn" onClick={()=>{
                    let filteredRestaurants = filteredRestaurantAPI.filter((res)=>res.info.avgRating > 4)
@@ -57,7 +60,7 @@ const Body = () =>{
                    let filteredRestaurants = filteredRestaurantAPI.filter((res)=>res.info.avgRating < 4)
                    setFilteredRestaurantAPI(filteredRestaurants)
                     }}>
-                    Lowest Rated Restaurants
+                    Low Rated Restaurants
                   </button>
                 </div>
                 <div className="body-restaurant">{filteredRestaurantAPI.map((restaurant)=>(
