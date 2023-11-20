@@ -25,7 +25,7 @@ const Header = ()=>{
         <Link className="link" to ="/"><img src={LOGO_URL} alt="logo" /></Link>
       </div>
 
-      <div className="right">
+      <div className={clicked?"right":"right-close"} >
         <Link className="link" to="/">
           <div className="search">
             <i className="fa fa-home" aria-hidden="true"></i>
@@ -57,7 +57,7 @@ const Header = ()=>{
         </div>
         </Link>
 
-        <button onClick={()=>{
+        <button className="log-in-out" onClick={()=>{
           butName === "Login"? 
           setButname("Logout"): 
           setButname("Login")
