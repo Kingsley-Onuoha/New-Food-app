@@ -2,7 +2,7 @@ import React from "react"
 import ReactDOM from "react-dom/client"
 import RestaurantCard, { withClosedLabel, withOpenedLabel } from "./RestaurantCard"
 import { useState, useEffect } from "react"
-import { resList } from "../utils/config"
+import { MENU_API, resList } from "../utils/config"
 import Shimmer from "./Shimmer"
 import { Link } from "react-router-dom"
 
@@ -21,19 +21,30 @@ const Body = () =>{
    const RestaurantCardWithClosedLabel = withClosedLabel(RestaurantCard)
 
 
+
    useEffect(() =>{
     fetchData()
    },[])
 
-   const fetchData = async ()=>{
-    const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
+  const fetchData = async () => {
 
-    const json = await data.json()
+    const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+    const json = await data.json();
 
-    setRestaurantAPI(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-    setFilteredRestaurantAPI(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-   }
-    return restaurantAPI.length === 0? <Shimmer />: (
+    let restaurants = json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+    if (restaurants === undefined) {
+      restaurants = json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+    }
+    setRestaurantAPI(restaurants);
+
+    let filteredRestaurants = json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+    if (filteredRestaurants === undefined) {
+      filteredRestaurants = json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+    }
+    setFilteredRestaurantAPI(filteredRestaurants);
+  };
+  
+  return restaurantAPI === undefined ||restaurantAPI.length === 0 ? <Shimmer /> : (
         <div className="body">
                 <div className="input">
                   <input type="text" value={searchText} onChange={(e)=>{

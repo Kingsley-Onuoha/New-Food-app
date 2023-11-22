@@ -4490,6 +4490,7 @@ column-gap: 0.7rem;
     font-size: medium;
     margin-bottom: 0.5rem 0.2rem;
     margin-top: 0.6rem;
+    text-align: center;
   }
   .filters{
     display: flex;
@@ -4530,10 +4531,13 @@ column-gap: 0.7rem;
   .restaurant-card{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 18rem;
     height: auto;
     row-gap: 0.1rem;
     cursor: pointer;
+    margin: 0 auto;
   }
   .restaurant-card:hover{
     transform: scale(0.92);

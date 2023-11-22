@@ -7,7 +7,7 @@ const Shimmer =()=>{
   
     return(
         <div className="shimmer">
-             <ShimmerText line={2} gap={10} />;
+             <ShimmerText line={3} gap={10} />
             <ShimmerSimpleGallery card imageHeight={200} imageWidth={100} caption />
         </div>
     )

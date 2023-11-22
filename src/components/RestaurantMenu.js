@@ -28,14 +28,20 @@ const RestaurantMenu = () =>{
         
         const json = await data.json()
 
+        console.log
+
         setResInfo(json?.data?.cards[0]?.card?.card?.info)
 
-        setResMenu(json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards)
+        let menuCards = json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards
 
-        setNewMenu(json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards)
+        if(menuCards === undefined){
+            menuCards = json?.data?.cards[3]?.groupedCard?.cardGroupMap?.REGULAR?.cards
+        }
+
+        const categories = menuCards.filter(c=> c?.card?.card?.itemCards !== undefined)
+        setResMenu(categories)
     }
-    const categories = newMenu.filter(c=> c?.card?.card?.["@type"]== 
-    "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory")
+    
 
 
     return (resInfo === null)? <Shimmer />:(
@@ -59,7 +65,7 @@ const RestaurantMenu = () =>{
                 </span>
             </div>
             <div>
-                {categories.map((category, index) => <RestaurantCategory key={category?.card?.card.title} data= {category?.card?.card} showItems={index ==showIndex? true: false} setShowIndex={()=>{setShowIndex(index)}}/>)}
+                {resMenu.map((category, index) => <RestaurantCategory key={category?.card?.card.title} data= {category?.card?.card} showItems={index ==showIndex? true: false} setShowIndex={()=>{setShowIndex(index)}}/>)}
             </div>
         </div>
     ) 
