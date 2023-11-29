@@ -10,7 +10,7 @@ const Itemlist = ({items}) =>{
     return(
         <div>
             {items.map(item =>
-            <div className="menu-info" key={item?.card?.info?.id}> 
+            <div className="menu-info" key={item?.card?.info?.id } data-testid="foodItems"> 
                 <div className="individual-menu">
                     <h2 className="name">{item?.card?.info?.name}</h2>
                     <h3 className="cost">₦{ item?.card?.info?.price? Math.ceil(item?.card?.info?.price/100): Math.ceil(item?.card?.info?.defaultPrice)}</h3>

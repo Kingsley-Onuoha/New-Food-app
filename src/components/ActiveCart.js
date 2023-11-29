@@ -63,7 +63,7 @@ const ActiveCart = () =>{
                 ))}
             <div className="cart-summary">
                 <div className="btn">
-                    <button className="clear-cart" onClick={() => handleClearCart()}>Clear Cart</button>
+                    <button className="clear-cart" onClick={() => handleClearCart()}>Clear cart</button>
                 </div>
                 <div className="cart-checkout">
                     <div className="sub-total">

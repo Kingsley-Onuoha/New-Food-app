@@ -3,7 +3,7 @@ import { render, screen } from "@testing-library/react"
 import "@testing-library/jest-dom"
 
 
-test("should load 2 headers in About component",()=>{
+test("should load 4 headers in About component",()=>{
     render(<About />)
 
     const heading = screen.getAllByRole("heading")

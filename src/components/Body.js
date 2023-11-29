@@ -5,6 +5,7 @@ import { useState, useEffect } from "react"
 import { MENU_API, resList } from "../utils/config"
 import Shimmer from "./Shimmer"
 import { Link } from "react-router-dom"
+import { RES_LIST_API } from "../utils/config"
 
 
 
@@ -28,7 +29,7 @@ const Body = () =>{
 
   const fetchData = async () => {
 
-    const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+    const data = await fetch(RES_LIST_API);
     const json = await data.json();
 
     let restaurants = json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
@@ -47,7 +48,7 @@ const Body = () =>{
   return restaurantAPI === undefined ||restaurantAPI.length === 0 ? <Shimmer /> : (
         <div className="body">
                 <div className="input">
-                  <input type="text" value={searchText} onChange={(e)=>{
+                  <input type="text" value={searchText} data-testid="searchInput" onChange={(e)=>{
                     setSearchText(e.target.value)
                   }} />
                   <button onClick={()=>{
