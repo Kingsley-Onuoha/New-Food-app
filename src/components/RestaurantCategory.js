@@ -13,8 +13,8 @@ const RestaurantCategory = ({data, showItems, setShowIndex}) => {
     <div className='restaurant-category'>
         <div className='accordion-header' onClick={handleClick}>
               <h3>{data?.title} ({data?.itemCards?.length})</h3>
-              {showItems == false? (<i class="fa fa-angle-down" aria-hidden="true"></i>):
-              (<i class="fa fa-angle-up" aria-hidden="true"></i>)}
+              {showItems == false? (<i className="fa fa-angle-down" aria-hidden="true"></i>):
+              (<i className="fa fa-angle-up" aria-hidden="true"></i>)}
         </div> 
         {showItems && <Itemlist items={data?.itemCards} />} 
     </div>

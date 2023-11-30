@@ -10,7 +10,7 @@ const EmptyCart = () =>{
             <p>You can go to home page to view more restaurants</p>
             <Link className="link" to="/">
             <div className="continue-shopping">
-                <span><i class="fa fa-long-arrow-left" aria-hidden="true"></i></span>
+                <span><i className="fa fa-long-arrow-left" aria-hidden="true"></i></span>
                 <span><h4>Continue Shopping</h4></span>
             </div>
             </Link>
