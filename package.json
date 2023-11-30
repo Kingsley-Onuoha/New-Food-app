@@ -2,7 +2,6 @@
   "name": "new-food-app",
   "version": "1.0.0",
   "description": "food app",
-  "main": "index.js",
   "scripts": {
     "test": "jest",
     "start": "parcel index.html",
