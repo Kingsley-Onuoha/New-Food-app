@@ -17,9 +17,9 @@ const RestaurantCard = (props) =>{
                         <div className="star"><i className="fa fa-star" aria-hidden="true"></i></div>
                         <h2 className="rating2">{avgRating}</h2>
                     </div>
-                    <h3 className="cuisines">
+                    <h4 className="cuisines">
                         {cuisines?.join(" , ")}
-                    </h3>
+                    </h4>
                 </div>
             </div>
         </div>

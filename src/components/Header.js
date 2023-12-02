@@ -64,7 +64,9 @@ const Header = ()=>{
         }}
         >{butName}</button>
 
-        <h2>Hi {data.loggedInUser}</h2>
+        <div className="context">
+          <h2>Hi {data.loggedInUser}</h2>
+        </div>
       </div>
 
       <div className="mobile">
