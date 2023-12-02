@@ -46,9 +46,8 @@ const Body = () =>{
   };
   
   return restaurantAPI === undefined ||restaurantAPI.length === 0 ? <Shimmer /> : (
-        <div className="body">
-                <div className="input">
-                  <input type="text" value={searchText} data-testid="searchInput" onChange={(e)=>{
+              <div className="body">
+                <div className="input"><input type="text" value={searchText} data-testid="searchInput" onChange={(e)=>{
                     setSearchText(e.target.value)
                   }} />
                   <button onClick={()=>{
@@ -76,12 +75,12 @@ const Body = () =>{
                   </button>
                 </div>
                 <div className="body-restaurant">{filteredRestaurantAPI.map((restaurant)=>(
-                <Link className="link" key={restaurant.info.id} to={"/restaurants/"+ restaurant.info.id}>
-                  {restaurant.info.availability.opened?(< RestaurantCardWithOpenLabel resData={restaurant}/>):(<RestaurantCardWithClosedLabel resData={restaurant}/>)}
-                </Link>
-                ))}</div>
-                
-        </div>
+                  <Link className="link" key={restaurant.info.id} to={"/restaurants/"+ restaurant.info.id}>
+                    {restaurant.info.availability.opened?(< RestaurantCardWithOpenLabel resData={restaurant}/>):(<RestaurantCardWithClosedLabel resData={restaurant}/>)}
+                  </Link>
+                  ))}
+                </div>              
+              </div>
     )
 }
 export default Body

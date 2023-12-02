@@ -7,7 +7,7 @@ const About = () =>{
             <div className="about-info">
                 <img src= {require("../../Photos/WhatsApp Image 2023-10-16 at 14.57.49.jpeg")} alt="my-photo"/>
                 <div className="main">
-                    <h2 className="passion">I'm passionate about technology and thoroughly enjoy website Development.</h2>
+                    <h2 className="passion">I'm passionate about technology and thoroughly enjoy website development.</h2>
                     <div className="brief-info">
                         <h2>📫 Email: onuohakingsley521@gmail.com</h2>
                     </div>

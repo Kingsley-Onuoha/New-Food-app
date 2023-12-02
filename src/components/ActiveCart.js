@@ -70,7 +70,7 @@ const ActiveCart = () =>{
                         <h3>Subtotal</h3> 
                         <h3 className ="total-amount">₦ {cart?.totalAmount}</h3>
                     </div>
-                    <h4 className="free-delivery">Delivery is free Nationwide</h4>
+                    <h2 className="free-delivery">Delivery is free Nationwide</h2>
                     <button className="checkout">Check out</button>
                     <Link to="/" className="link">
                         <div className="continue-shopping">
