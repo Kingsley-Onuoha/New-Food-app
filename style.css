@@ -8,7 +8,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 3rem;
+  padding: 0.7rem;
   box-shadow: 5px 6px 8px rgb(241, 239, 239);
   color: rgb(59, 53, 53);
   font-weight: 100;
@@ -20,12 +20,12 @@
 .header .left {
   display: flex;
   flex-direction: row;
-  column-gap: 1.0rem;
+  column-gap: 0.6rem;
   align-items: center;
 }
 .left img {
-  width: 3rem;
-  height: 2.5rem;
+  width: 2rem;
+  height: 2rem;
   object-fit: contain;
   cursor: pointer;
 }
@@ -34,13 +34,13 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  column-gap: 1rem;
+  column-gap: 0.5rem;
 }
 .header .right-close {
   display: flex;
   flex-direction: row;
   align-items: center;
-  column-gap: 1rem;
+  column-gap: 0.5rem;
 }
 .search {
   display: flex;
@@ -49,7 +49,7 @@
   align-items: center;
   column-gap: 0.3rem;
   cursor: pointer;
-  font-size: small;
+  font-size: smaller;
 
 }
 .search:hover {
@@ -60,21 +60,12 @@
   column-gap: 0.3rem;
   cursor: pointer;
   color: rgb(255, 141, 2);
-  font-size: small;
+  font-size: smaller;
 }
 .search i {
-  font-size: medium;
+  font-size: smaller;
 
 }
-/* .offers {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  column-gap: 0.3rem;
-  cursor: pointer;
-  font-size: small;
-} */
 .help {
   display: flex;
   flex-direction: row;
@@ -82,7 +73,7 @@
   align-items: center;
   column-gap: 0.3rem;
   cursor: pointer;
-  font-size: small;
+  font-size: smaller;
 }
 .help:hover {
   display: flex;
@@ -92,10 +83,10 @@
   column-gap: 0.5rem;
   cursor: pointer;
   color: rgb(255, 141, 2);
-  font-size: small;
+  font-size: smaller;
 }
 .help i {
-  font-size: medium
+  font-size: smaller
 }
 .user {
   display: flex;
@@ -104,7 +95,7 @@
   align-items: center;
   column-gap: 0.5rem;
   cursor: pointer;
-  font-size: small;
+  font-size: smaller;
 }
 .user:hover {
   display: flex;
@@ -114,10 +105,10 @@
   column-gap: 0.5rem;
   cursor: pointer;
   color: rgb(255, 141, 2);
-  font-size: small;
+  font-size: smaller;
 }
 .user i {
-  font-size: medium
+  font-size: smaller;
 }
 .cart {
   display: flex;
@@ -126,7 +117,7 @@
   align-items: center;
   column-gap: 0.5rem;
   cursor: pointer;
-  font-size: small;
+  font-size: smaller;
 }
 .cart:hover {
   display: flex;
@@ -136,7 +127,7 @@
   column-gap: 0.5rem;
   cursor: pointer;
   color: rgb(255, 141, 2);
-  font-size: small;
+  font-size: smaller;
 }
 .cart i {
   font-size: medium
@@ -151,10 +142,8 @@
   align-content: center;
   right: 5.4rem;
   top: 1.8rem;
-  font-size: small;
+  font-size: smaller;
 }
-
- 
 .right button{
   width: 4rem;
   height: 2rem;
@@ -164,7 +153,7 @@
   color: white;
   background-color: rgb(24, 21, 21);
   cursor: pointer;
-  font-size: medium;
+  font-size: smaller;
 }
 .right button:hover{
   width: 4rem;
@@ -176,7 +165,7 @@
   background-color: rgb(255, 141, 2);
   color: black;
   cursor: pointer;
-  font-size: medium;
+  font-size: smaller;
 }
 .right-close button{
   width: 4rem;
@@ -186,7 +175,7 @@
   border-radius: 0.7rem;
   color: white;
   background-color: rgb(24, 21, 21);
-  font-size: medium;
+  font-size: smaller;
   cursor: pointer;
 }
 .right-close button:hover{
@@ -198,11 +187,11 @@
   color: white;
   background-color: rgb(255, 141, 2);
   color: black;
-  font-size: medium;
+  font-size: smaller;
   cursor: pointer;
 }
 .context h2{
-  font-size: large;
+  font-size: smaller;
 }
 .body{
   margin: 1rem 2.8rem;
