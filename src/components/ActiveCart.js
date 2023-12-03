@@ -42,14 +42,13 @@ const ActiveCart = () =>{
                                 <img src={CLOUDINARYIMAGEID_URL + items?.card?.info?.imageId} alt={items?.card?.info?.name}/>
                                <div className ="details">
                                     <h3>{items?.card?.info?.name}</h3>
-                                    <p>{items?.card?.info?.description}</p>
                                     <button className="remove" onClick={()=> handleRemoveItem(items)}>Remove</button>
                                 </div>
                             </div>
                             <div className="cart-product-price">
                                 <h3>Price:  ₦ {Math.ceil(items?.card?.info?.price/100)}</h3>
                                 <div className="increment">
-                                    <h4>Quantity:  </h4>
+                                    <h4>Quantity:</h4>
                                     <div className="increment-btn">
                                         <button onClick={() =>handleDecreaseCartQuantity(items)}> - </button>
                                         <h3>{items?.cartQuantity}</h3>

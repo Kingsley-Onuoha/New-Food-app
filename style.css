@@ -933,7 +933,6 @@ column-gap: 0.7rem;
     column-gap: 0.3rem;
     cursor: pointer;
     font-size: small;
-  
   }
   .search:hover {
     display: flex;
@@ -1036,8 +1035,6 @@ column-gap: 0.7rem;
     top: 1.8rem;
     font-size: small;
   }
-  
-   
   .right button{
     width: 4rem;
     height: 2rem;
@@ -1151,7 +1148,6 @@ column-gap: 0.7rem;
   }
   .filter-title h1{
     font-size: medium;
-
   }
   .filter-btn{
     width: 20rem;
@@ -1350,8 +1346,7 @@ column-gap: 0.7rem;
   .menu{
     display: flex;
     flex-direction: column;
-    margin: 2rem 7rem;
-  
+    margin: 2rem;
   }
   .info h1{
     font-size: larger;
@@ -1374,7 +1369,6 @@ column-gap: 0.7rem;
     padding: 1rem;
     height: 6.3rem;
     row-gap: 0.5rem;
-    margin-right: 2rem;
   }
   .rating span{
     display: flex;
@@ -1514,12 +1508,12 @@ column-gap: 0.7rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 1rem;
+    padding: 0.5rem;
     margin-top: 0.6rem;
     row-gap: 1.5rem;
   }
   .menu-info .individual-menu{
-    width: 60%;
+    width: 70%;
   }
   .individual-menu .name{
     color: black;
@@ -1546,8 +1540,8 @@ column-gap: 0.7rem;
     border-bottom: none;
   }
   .menu-info img{
-    width: 7rem;
-    height: 5rem;
+    width: 5rem;
+    height: 4rem;
     object-fit: cover;
     border-radius: 0.5rem;
   }
@@ -1565,11 +1559,11 @@ column-gap: 0.7rem;
   color: white;
   width: 3rem;
   height: 1.5rem;
-  font-size: medium;
+  font-size: small;
   align-items: center;
   cursor: pointer;
-  right: 1.5rem;
-  bottom: 0.1rem;
+  right: 1.9rem;
+  bottom: 3rem;
   }
   .img-btn button:hover{
   position: absolute;
@@ -1579,12 +1573,12 @@ column-gap: 0.7rem;
   background-color: rgb(75, 74, 74);
   color: rgb(255, 255, 255);
   width: 3rem;
-  height: 1.5rem;
-  font-size: medium;
+  height: 1.7rem;
+  font-size: small;
   align-items: center;
   cursor: pointer;
-  right: 1.5rem;
-  bottom: 0.1rem;
+  right: 1.9rem;
+  bottom: 3rem;
   }
   .empty-cart{
     display: flex;
@@ -1611,10 +1605,12 @@ column-gap: 0.7rem;
    flex-direction: row;
    justify-content: center;
    align-items: center;
-   column-gap: 1rem;
+   column-gap: 0.3rem;
    background-color: rgb(223, 117, 19);
    color: azure;
    padding: 0.5rem 1.3rem;
+   font-size: small;
+   border-radius: 0.6rem;
   }
   .link{
     text-decoration: none;
@@ -1633,51 +1629,45 @@ column-gap: 0.7rem;
     border-radius: 0.5rem;
     align-items: center;
     justify-content: space-between;
-    width: 80%;
-    margin: 1rem auto;
+    width: 95%;
+    margin: 0.7rem auto;
   }
   .added-cart-img{
     display: flex;
     flex-direction: row;
-    column-gap: 1rem;
-    padding: 1rem;
-    width: 34rem;
+    column-gap: 0.2rem;
+    width: 14rem;
     
   }
   .added-cart-img img{
-  width: 8rem;
-  height: 8rem;
+  width: 3rem;
+  height: 3rem;
   object-fit: contain;
-  border-radius: 0.9rem;
+  border-radius: 0.4rem;
   }
   .details h3{
-    font-size: large;
-  }
-  .details p{
-    font-size: medium;
+    font-size: small;
   }
   .details button{
-    width:10rem;
-    height: 2rem;
+    width:4rem;
+    height: 1.2rem;
     background-color: rgb(5, 79, 175);
     color: white;
     outline: none;
     border: none;
-    font-size: larger;
+    font-size: small;
     border-radius: 0.3rem;
     cursor: pointer;
-    margin-top: 0.5rem;
+    margin-top: 0.5rem 0rem;
+
   }
   .cart-product-price{
     display: flex;
     flex-direction: row;
-    column-gap: 2rem;
-    justify-content: space-evenly;
-    align-items: center;
-    padding-right:1.5rem;
+    column-gap: 0.85rem;
   }
   .cart-product-price h3{
-    font-size: large;
+    font-size: x-small;
     color: #121212;
     font-weight: 700;
   }
@@ -1686,41 +1676,43 @@ column-gap: 0.7rem;
     flex-direction: row;
   }
   .increment h4{
-    font-size: large;
+    font-size: small;
     color: #121212;
     font-weight: 700;
   }
   .increment-btn{
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
   border: 1px solid #747373;
-  column-gap: 0.7rem;
+  column-gap: 0.3rem;
   }
   .increment-btn button{
     outline: none;
     border: none;
     background-color: white;
-    font-size: large;
+    font-size: small;
     cursor: pointer;
     font-weight: 900;
     
   }
   .cart-summary{
-    width: 65%;
-    margin: 2rem auto;
+    width: 75%;
+    margin: 1rem auto;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    column-gap: 2rem;
   }
   .cart-checkout{
     display: flex;
     flex-direction: column;
-    row-gap: 0.6rem;
+    row-gap: 0.3rem;
   }
   .btn button{
-    width: 7rem;
+    width: 5rem;
     height: 2rem;
-    font-size: large;
+    font-size: small;
     border-radius: 0.4rem;
     color: black;
     font-weight: 600;
@@ -1732,7 +1724,7 @@ column-gap: 0.7rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    font-size: large;
+    font-size: small;
   }
   
   .free-delivery{
@@ -1741,13 +1733,13 @@ column-gap: 0.7rem;
     font-weight: 500;
   }
   .checkout{
-    width: 10rem;
+    width: 5rem;
     height: 1.7rem;
     background-color: rgb(5, 79, 175);
     color: white;
     outline: none;
     border: none;
-    font-size: large;
+    font-size: small;
     border-radius: 0.3rem;
     cursor: pointer;
     margin-top: 0.5rem;
