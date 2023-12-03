@@ -28,7 +28,6 @@ const Header = ()=>{
           <h2>Hi {data.loggedInUser}</h2>
         </div>
       </div>
-
       <div className={clicked?"right":"right-close"} >
         <Link className="link" to="/">
           <div className="search">
