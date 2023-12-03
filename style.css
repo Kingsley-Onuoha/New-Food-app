@@ -862,7 +862,7 @@ column-gap: 0.7rem;
 .mobile{
   display:none
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 480px) and (min-width:420px){
   .header {
     display: flex;
     flex-direction: row;
