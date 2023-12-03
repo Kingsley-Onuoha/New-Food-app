@@ -889,6 +889,9 @@ column-gap: 0.7rem;
     object-fit: contain;
     cursor: pointer;
   }
+  .left .context h2{
+    font-size: small;
+  }
   
   .header .right {
     display: flex;

@@ -23,6 +23,10 @@ const Header = ()=>{
     <div className="header">
       <div className="left">
         <Link className="link" to ="/"><img src={LOGO_URL} alt="logo" /></Link>
+
+        <div className="context">
+          <h2>Hi {data.loggedInUser}</h2>
+        </div>
       </div>
 
       <div className={clicked?"right":"right-close"} >
@@ -64,9 +68,7 @@ const Header = ()=>{
         }}
         >{butName}</button>
 
-        <div className="context">
-          <h2>Hi {data.loggedInUser}</h2>
-        </div>
+
       </div>
 
       <div className="mobile">
