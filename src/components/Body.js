@@ -32,15 +32,15 @@ const Body = () =>{
     const data = await fetch(RES_LIST_API);
     const json = await data.json();
 
-    let restaurants = json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+    let restaurants = json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
     if (restaurants === undefined) {
-      restaurants = json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+      restaurants = json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
     }
     setRestaurantAPI(restaurants);
 
-    let filteredRestaurants = json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+    let filteredRestaurants = json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
     if (filteredRestaurants === undefined) {
-      filteredRestaurants = json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+      filteredRestaurants = json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
     }
     setFilteredRestaurantAPI(filteredRestaurants);
   };
