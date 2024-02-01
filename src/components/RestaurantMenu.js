@@ -28,15 +28,13 @@ const RestaurantMenu = () =>{
         
         const json = await data.json()
 
-        console.log
-
         setResInfo(json?.data?.cards[0]?.card?.card?.info)
 
         let menuCards = json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards
 
-        if(menuCards === undefined){
-            menuCards = json?.data?.cards[3]?.groupedCard?.cardGroupMap?.REGULAR?.cards
-        }
+        // if(menuCards === undefined){
+        //     menuCards = json?.data?.cards[3]?.groupedCard?.cardGroupMap?.REGULAR?.cards
+        // }
 
         const categories = menuCards.filter(c=> c?.card?.card?.itemCards !== undefined)
         setResMenu(categories)
@@ -50,7 +48,7 @@ const RestaurantMenu = () =>{
                 <div className="info">
                     <h1>{resInfo?.name}</h1>    
                     <h3>{resInfo?.cuisines.join(" , ")}</h3>    
-                    <h3>{resInfo?.areaName} , {resInfo.sla?.lastMileTravelString}</h3>           
+                    <h3>{resInfo?.areaName}</h3>           
                 </div>
                 <div className="rating">
                     <span>
@@ -64,7 +62,7 @@ const RestaurantMenu = () =>{
                     <i className="fa fa-bicycle" aria-hidden="true"></i><h2>{resInfo?.feeDetails?.message}</h2>
                 </span>
             </div>
-            <div>
+            <div> z
                 {resMenu.map((category, index) => <RestaurantCategory key={category?.card?.card.title} data= {category?.card?.card} showItems={index ==showIndex} setShowIndex={()=>{setShowIndex(showIndex === index? null : index)}}/>)}
             </div>
         </div>
