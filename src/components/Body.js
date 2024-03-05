@@ -32,7 +32,7 @@ const Body = () =>{
     const data = await fetch(RES_LIST_API);
     const json = await data.json();
 
-    let restaurants = json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+    let restaurants = json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
     if (restaurants === undefined) {
       restaurants = json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
     }
