@@ -29,13 +29,27 @@ const Body = () =>{
 
   const fetchData = async () => {
 
-    const data = await fetch(RES_LIST_API);
-    const json = await data.json();
+    // const data = await fetch(RES_LIST_API);
+    // const json = await data.json();
 
-    let restaurants = json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
-    if (restaurants === undefined) {
-      restaurants = json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
-    }
+    //
+    if(800<=window.screen.height){
+      const data = await fetch('https://www.swiggy.com/mapi/restaurants/list/v5?offset=0&is-seo-homepage-enabled=true&lat=12.9715987&lng=77.5945627&carousel=true&third_party_vendor=1')
+      var json = await data.json(); 
+  }
+  else{
+      const data = await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING')
+      var json = await data.json(); 
+  }
+
+  let restaurants = json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants || json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+
+    //
+
+    // let restaurants = json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+    // if (restaurants === undefined) {
+    //   restaurants = json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+    // }
     setRestaurantAPI(restaurants);
 
     let filteredRestaurants = json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;

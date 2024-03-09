@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react"
 import Shimmer from "./Shimmer"
-import { CLOUDINARYIMAGEID_URL } from "../utils/config"
+import { CLOUDINARYIMAGEID_URL, MENU_API_DESKTOP, MENU_API_MOBILE} from "../utils/config"
 import { json, useParams } from "react-router-dom"
-import { MENU_API } from "../utils/config"
 import RestaurantCategory from "./RestaurantCategory"
 
 
@@ -23,21 +22,50 @@ const RestaurantMenu = () =>{
         fetchMenu()
     }, [])
 
+
+
+    
     const fetchMenu = async ()=>{
-        const data = await fetch(MENU_API+ resId +"&catalog_qa=undefined&submitAction=ENTER")
+
+        if(800<=window.screen.height){
+            const data = await fetch(MENU_API_MOBILE+ resId +"&isMenuUx4=true&submitAction=ENTER")
+            var json = await data.json(); 
+
+            setResInfo(json?.data?.cards[2]?.card?.card?.info)
+
+            var menuCards = json?.data?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards
+
+            var categories = menuCards?.filter(c=> c?.card?.card?.itemCards !== undefined)
+            setResMenu(categories)
+            
+        }
+        else{
+            const data = await fetch(MENU_API_DESKTOP+ resId +"&catalog_qa=undefined&submitAction=ENTER")
+            var json = await data.json(); 
+
+            setResInfo(json?.data?.cards[0]?.card?.card?.info)
+
+            var menuCards = json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards
+
+            var categories = menuCards?.filter(c=> c?.card?.card?.itemCards !== undefined)
+            setResMenu(categories)
+        }
+
         
-        const json = await data.json()
+        // const data = await fetch(MENU_API+ resId +"&catalog_qa=undefined&submitAction=ENTER")
+        
+        // const json = await data.json()
 
-        setResInfo(json?.data?.cards[0]?.card?.card?.info)
+        // setResInfo(json?.data?.cards[0]?.card?.card?.info)
 
-        let menuCards = json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards
+        // let menuCards = json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards
 
         // if(menuCards === undefined){
-        //     menuCards = json?.data?.cards[3]?.groupedCard?.cardGroupMap?.REGULAR?.cards
+        //     menuCards = json?.data?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards
         // }
 
-        const categories = menuCards.filter(c=> c?.card?.card?.itemCards !== undefined)
-        setResMenu(categories)
+        // const categories = menuCards.filter(c=> c?.card?.card?.itemCards !== undefined)
+        // setResMenu(categories)
     }
     
 
